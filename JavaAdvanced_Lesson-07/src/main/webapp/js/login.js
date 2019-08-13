@@ -2,7 +2,7 @@ function loginRegisterSwitch() {
 	$('form').animate({	height: 'toggle', opacity: 'toggle'	}, 'slow');
 }
 
-function showAlertAfterRegistration() {
+function showAlert() {
 	$('.alert-success').show();
 }
 
@@ -25,7 +25,7 @@ $('button.register').click(function() {
 	
 	if (firstName == '' || lastName == '' || email == '' || password == '' || confirmPassword == '') {
 		alert('Заполните все обязательные поля!');
-	} else if ((password.length) < 8) {
+	} else if ((password.length) < 6) {
 		alert('Пароль должен быть не менее 8 символов!');
 	} else if (!(password).match(confirmPassword)) {
 		alert("Введенные пароли не совпадают. Попробуйте ещё раз!");
@@ -43,7 +43,7 @@ $('button.register').click(function() {
 				$('.register-form').reset();
 				$('.login-form').reset();
 				loginRegisterSwitch();
-				showAlertAfterRegistration();
+				showAlert();
 			}			
 		});
 	}

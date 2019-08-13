@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
 
 		if (user == null) {
 			log.warn("There is no user with login \"" + login + "\" in database!");
-			response.setContentType("text/plain");
+			response.setContentType("text/html");
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().write("Пользователя с логином \"" + login + "\" в базе данных не существует!");
 		} else {
@@ -69,7 +69,7 @@ public class LoginServlet extends HttpServlet {
 
 			} else {
 				log.warn("User's password doesn't match database!");
-				response.setContentType("text/plain");
+				response.setContentType("text/html");
 				response.setCharacterEncoding("UTF-8");
 				response.getWriter().write("Введенный пароль не совпадает с базой данных!");
 			}

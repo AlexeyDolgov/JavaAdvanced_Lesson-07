@@ -20,12 +20,6 @@
 <body>
     <jsp:include page="header.jsp"></jsp:include>
     
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-			<b>Ура!</b> Вы успешно зарегистрировались в интернет-магазине журналов!
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-	</div>
     <div class="login-page">
         <div class="form">
             <form class="register-form">
@@ -48,12 +42,12 @@
         </div>
     </div>
 
-<!--     <h1>Форма авторизации</h1>
-    <form action="logging" method="post">
-        <input name="login" type="text" placeholder="Логин"><br>
-        <br> <input name="password" type="password" placeholder="Пароль"><br>
-        <br> <input type="submit" value="Вход">
-    </form> -->
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+			<b>Ура!</b> Вы успешно зарегистрировались в интернет-магазине журналов!
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+	</div>
 
     <jsp:include page="footer.jsp"></jsp:include>
 

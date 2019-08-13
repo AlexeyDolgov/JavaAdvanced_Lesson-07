@@ -50,7 +50,7 @@ public class RegistrationServlet extends HttpServlet {
 			log.error("Creating user failed!", e);
 		}
 
-		response.setContentType("text/plain");
+		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write("Success");		
 	}
