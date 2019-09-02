@@ -53,20 +53,12 @@ public class LoginServlet extends HttpServlet {
 		} else {
 			log.trace("Checking user's password for matching database...");
 			if (user.getPassword().equals(password)) {
-//				log.trace("Preparing fields to return...");
-//				request.setAttribute("userFirstName", user.getFirstName());
-//				request.setAttribute("userLastName", user.getLastName());
-//				request.setAttribute("userAction", "авторизировались");
-
 				log.trace("Redirecting to User's account page...");
-				UserLogin userLogin = new UserLogin();
-				userLogin.destinationUrl = "jsp/cabinet.jsp";
-				userLogin.userEmail = user.getEmail();
+				UserLogin userLogin = new UserLogin(user.getEmail(), "jsp/cabinet.jsp");
 				String json = new Gson().toJson(userLogin);
 				response.setContentType("application/json");
 				response.setCharacterEncoding("UTF-8");
 				response.getWriter().write(json);
-
 			} else {
 				log.warn("User's password doesn't match database!");
 				response.setContentType("text/html");

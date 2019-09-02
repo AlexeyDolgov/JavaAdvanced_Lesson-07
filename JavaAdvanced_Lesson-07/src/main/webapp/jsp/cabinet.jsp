@@ -9,8 +9,7 @@
 </head>
 
 <body>
-    <h1>${userFirstName} ${userLastName}, Вы успешно ${userAction} в интернет-магазине!</h1>
-    <a href="${pageContext.request.contextPath}/index.jsp">На главную</a>
+    <h1>Вы успешно авторизировались в интернет-магазине!</h1>
 </body>
 
 </html>

@@ -19,6 +19,13 @@
 
 <body>
     <jsp:include page="header.jsp"></jsp:include>
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+			<b>Ура!</b> Вы успешно зарегистрировались в интернет-магазине журналов!
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+	</div>
     
     <div class="login-page">
         <div class="form">
@@ -30,27 +37,19 @@
                 <input class="confirmPassword" type="password" placeholder="Повторите пароль" />
                 <label><input id="user" name="accessLevel" type="radio" value="user" checked>Пользователь</label>
         		<label><input id="admin" name="accessLevel" type="radio" value="admin">Администратор</label>
-                <button class="register" type="submit">Создать аккаунт</button>
+                <button class="register" type="button">Создать аккаунт</button>
                 <p class="message">Уже зарегистрированы? <a href="#">Войти</a></p>
             </form>
             <form class="login-form">
                 <input class="email" type="text" placeholder="Логин" />
                 <input class="password" type="password" placeholder="Пароль" />
-                <button class="login" type="submit">Войти</button>
+                <button class="login" type="button">Войти</button>
                 <p class="message">Ещё не зарегистрированы? <a href="#">Создать аккаунт</a></p>
             </form>
         </div>
     </div>
 
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-			<b>Ура!</b> Вы успешно зарегистрировались в интернет-магазине журналов!
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-	</div>
-
     <jsp:include page="footer.jsp"></jsp:include>
-
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

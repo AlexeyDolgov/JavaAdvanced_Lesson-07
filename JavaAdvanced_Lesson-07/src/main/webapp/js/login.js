@@ -26,7 +26,7 @@ $('button.register').click(function() {
 	if (firstName == '' || lastName == '' || email == '' || password == '' || confirmPassword == '') {
 		alert('Заполните все обязательные поля!');
 	} else if ((password.length) < 6) {
-		alert('Пароль должен быть не менее 8 символов!');
+		alert('Пароль должен быть не менее 6 символов!');
 	} else if (!(password).match(confirmPassword)) {
 		alert("Введенные пароли не совпадают. Попробуйте ещё раз!");
 	} else {
@@ -40,8 +40,8 @@ $('button.register').click(function() {
 
 		$.post('registering', regFormUser, function(data) {
 			if (data === 'Success') {
-				$('.register-form').reset();
-				$('.login-form').reset();
+				$('.register-form').trigger('reset');
+				$('.login-form').trigger('reset');
 				loginRegisterSwitch();
 				showAlert();
 			}			
@@ -62,7 +62,18 @@ $('button.login').click(function() {
 		};
 
 		$.post('logging', loginFormUser, function(data) {
-			alert(data);
+			if (typeof(data) === 'object') {
+				var customUrl = '';
+				var urlContent = window.location.href.split('/');
+			
+				for (var i = 0; i < urlContent.length - 1; i++) {
+					customUrl += urlContent[i] + '/';
+				}
+				window.location = customUrl + data.destinationUrl;
+			} else {
+				alert(data);
+				$('.login-form').trigger('reset');
+			}
 		});
 	}
 });
